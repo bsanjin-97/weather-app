@@ -1,5 +1,6 @@
-const key = 'WPE2TRbXTxVGrZUwiRyatAx2qItpdSaw';
+import config from '../config.js';
 
+const key = config.accuWeatherApiKey;
 
 // get weather info
 const getWeather = async (id) => {
@@ -25,9 +26,11 @@ const getCity = async (city) => {
 
 };
 
-getCity('manchester').then(data => {
-    return getWeather(data.Key);
-}).then(data => {
-    console.log(data);
-}).catch(err => console.log(err));
+export { getWeather, getCity };
+
+// getCity('manchester').then(data => {
+//     return getWeather(data.Key);
+// }).then(data => {
+//     console.log(data);
+// }).catch(err => console.log(err));
 
